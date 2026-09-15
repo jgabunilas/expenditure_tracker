@@ -82,7 +82,7 @@ try:
     #   - default value
     #   - whether it is a primary key
     #
-    # We again use cursor.execute() to send this command.
+    # We again use cursor.execute() to send this command. However, the execution doesn't return the output automatically. We'll need to fetch the results afterward.
     cursor.execute("PRAGMA table_info(transactions);")
 
     # ------------------------------------------------------------
@@ -100,7 +100,7 @@ try:
     table_info = cursor.fetchall()
 
     # ------------------------------------------------------------
-    # 9. Print the table structure
+    # 9. Print the table structure that was fetched previously
     # ------------------------------------------------------------
     print("\nTable 'transactions' structure:")
     for column in table_info:
